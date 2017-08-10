@@ -1,0 +1,17 @@
+div
+{
+	background-color:rgb(255,255,255);
+	padding:20px;
+	margin:30px;
+}
+
+body
+{
+	background-image:url('blog.jpg');
+	background-repeat:no-repeat; 
+	background-size:cover;
+}
+h1
+{
+	text-alignment:centre;
+}
