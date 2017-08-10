@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="form.css">
+
+</head>
+<body>
+<form  align="right" method="POST" action="Register" onsubmit="return validations(this)">
+<table align="right">
+<tr><td colspan='2' style="text-align:center">Register Yourself!</td></tr>
+<tr>
+<td>Name :</td>
+<td><input type="text" name="name" required /><td>
+</tr>
+<tr>
+<td>DOB:</td>
+<td><input type="date" name="date" required /></td>
+</tr>
+<tr>
+<td>Phone:</td>
+<td><input type="number" name="phoneNo" required /></td>
+</tr>
+<tr>
+<td>E-mail:</td>
+<td><input type="email" name="email" required /></td>
+</tr>
+<tr>
+<td>Gender:</td>
+<td>Male <input type="radio" name="gender" value="Male"  /> Female<input type="radio" name="gender" value="Female"  /></td>
+</tr>
+<tr>
+<td>User Id:</td>
+<td><input id="u_name" type="text" name="uname"  required /></td>
+</tr>
+<tr>
+<td>Password:</td>
+<td><input type="password" name="password" required /></td>
+</tr>
+<tr>
+<td>Confirm Password:</td>
+<td><input type="password" name="cpassword" required /> </td>
+</tr>
+<tr>
+<td colspan='2' style="padding-left:75px"><input id="button" type="submit" value="Register">
+</td>
+</tr>
+</table>
+</form>
+
+
+<script>
+
+function validations(form)
+{
+
+name= form.name.value;
+dob=form.date.value;
+phone=form.phoneNo.value;
+email=form.email.value;
+uname=form.uname.value;
+password=form.password.value
+cpassword=form.cpassword.value;
+
+message="";
+flag=true;
+
+
+if(phone.length!=10)
+{
+message+="phone no should be 10 digit number\n";
+flag=false;
+}
+
+if(password.length!=8)
+{
+message+="password minimum length should be 8\n";
+flag=false;
+}
+
+if(password!=cpassword)
+{
+message+="confirm password is not equal to password \n";
+flag=false;
+}
+ 
+ if(!flag)
+{
+	 alert(message);
+}
+
+*/
+
+return flag;
+
+}
+</script>
+
+
+
+
+
+</body>
+</html>
