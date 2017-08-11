@@ -23,6 +23,7 @@ public class userCheck extends HttpServlet {
 			throws ServletException, IOException 
 	{
 		String uname=request.getParameter("loginId");
+		System.out.println("hello "+uname);
 		
 		
 	

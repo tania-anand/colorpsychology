@@ -8,7 +8,7 @@ function sendData()
 {
 	
 	var user_name = document.form.uname.value;
-	var url = "userInfo.jsp?loginId="+user_name;
+	var url = "userCheck?loginId="+user_name;
 	if(window.XMLHttpRequest)
 	{
 		request = new XMLHttpRequest();
@@ -20,13 +20,13 @@ function sendData()
 	
 	try
 	{
-		request.onreadystatechange = userCheck;
+		request.onreadystatechange = getInfo;
 		request.open("GET", url, true);
 		request.send();
 	}
 	catch(e)
 	{
-		alert("Some Exception");
+		log.console("Some Exception"+e);
 	}
 
 }
@@ -38,11 +38,11 @@ function getInfo()
 			var res = request.responseText;
 			var flag = request.getResponseHeader("flag");
 			
-			if(flag)
+			if(flag=="false")
 				{
 				document.form.uname.style.color="green";
 				}
-			else
+			if(flag=="true")
 				{
 				document.form.uname.style.color="red";
 				}
